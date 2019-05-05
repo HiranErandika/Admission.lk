@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Admission.lk</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -210,17 +210,11 @@ of other schools.)
 
  <div class="form-group col-sm-11"></div>
   <div class="form-group col-sm-1">
-  <button type="submit" form="nameform" value="Next" class="btn btn-success">Next</button>
+  <a href = "http://localhost/Admission.lk/authentication/fixedcatpage2.php">
+  <button type="submit" form="nameform" value="Next" class="btn btn-success">Next</button> </a>
   </div>
-
-
   </div>
-
-
-
-
-
-
+  
 
 
   </form>

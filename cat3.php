@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Admission.lk</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,8 +20,8 @@
   <p>Dear Parent/Guardian,<br> Welcome to our School's Admission Center.<b>Please complete only the sections relevant to the category applied for in the following sections.</b></p>
   <form>
     <div class="form-group">
-  <h4> 8.0 Brothers / sisters of students studying in the school at present:</h4>
-      <label for="usr">8.1  If a child/children of applicant is/are studying in the school</label>
+  <h3> 8.0 Brothers / sisters of students studying in the school at present:</h3> 
+      <label for="usr">8.1  If a child/children of applicant is/are studying in the school</label> 
   <br>
 
   <div class="form-group">
@@ -29,50 +29,50 @@
   <tr>
     <th>Serial No</th>
     <th>Name of child</th>
-    <th>Grade and Admission Number</th>
+    <th>Admission Number</th>
     <th>Admission Grade to this school and Grades spent </th>
     <th></th>
   </tr>
     <tr>
     <td>1</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc1" id="noc1" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan1" id="gan1" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags1" id="ags1" style="width:90%"></td>
     <td><br><br></td>
   </tr>
     <tr>
     <td>2</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc2" id="noc2" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan2" id="gan2" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags2" id="ags2" style="width:90%"></td>
     <td><br><br></td>
   </tr>
     <tr>
     <td>3</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc3" id="noc3" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan3" id="gan3" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags3" id="ags3" style="width:90%"></td>
     <td><br><br></td>
   </tr>
     <tr>
     <td>4</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc4" id="noc4" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan4" id="gan4" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags4" id="ags4" style="width:90%"></td>
     <td><br><br></td>
   </tr>
     <tr>
     <td>5</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc5" id="noc5" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan5" id="gan5" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags5" id="ags5" style="width:90%"></td>
     <td><br><br></td>
   </tr>
     <tr>
     <td>6</td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
-    <td><input class="form-control" type="text" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="noc6" id="noc6" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="gan6" id="gan6" style="width:90%"></td>
+    <td><input class="form-control" type="text" name="ags6" id="ags6" style="width:90%"></td>
     <td><br><br></td>
   </tr>
 
@@ -81,31 +81,31 @@
 
     <br>
      <label for="usr">8.2 Number of years that the applicant was included in the electoral register</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="nyre" id="nyrea">
     <br>
       <label> Number of years that the applicant’s spouse was included in the electoral register</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="nyres" id="nyres">
     <br>  
       <label> Number of years that the legal guardian was included in the   electoral register</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="nyreg" id="nyreg">
       <p>(This is applicable for a period of recent 05 years, prior to the year the application is submitted)</p>
     <br>
       <label>8.3  Number of other schools where the child could be admitted and located closer to the place of residence other than the school applied for</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="nschc" id="nschc">
     <br> 
     <div class="form-group" class="radio-inline">
        <label>8.4  Ownership of the place of residence (Title deed - in the name of applicant /spouse or applicant’s / spouse’s parents / registered Lease Bond / Government Official Quarters Documents / un-registered Lease Bond/ Any other Legal document to prove ownership</label>
     <label>   
-      <input type="radio" name="optradio" >Yes
-      <input type="radio" name="optradio">No
+      <input type="radio" name="ownradio" id="ownradio" >Yes
+      <input type="radio" name="ownradio" id="ownradio" >No
     </label>
     </div> 
 
     <div class="form-group" class="radio-inline">
        <label>8.5  Achievements gained for the school by brothers / sisters in the School and various types of assistance provided by the applicant for the development of the school</label>
     <label>
-      <input type="radio" name="optradio"> Yes
-      <input type="radio" name="optradio"> No
+      <input type="radio" name="achradio" id="achradio" > Yes
+      <input type="radio" name="achradio" id="achradio" > No
     </label>
     </div> 
     <br>

@@ -62,11 +62,7 @@
 	<!--Header-->
 	<header>
 	</header>
-<!--Sticky Footer-->
-<div class="footer" style="height: 8%">
-<br>
-  <p> © 2019 | Admission.lk</p>
-</div>	
+
 <!-- Applicant Category-->
 <div class="container-fluid">
   <h1>Applicant Category</h1>
@@ -75,19 +71,24 @@
   <br>
   <br>	 
   <div class="row">
-    <div class="col-sm-4" ><a href = "#"> <img src="IMG_1.jpg" style="width:40%; height:50"> </div>
-    <div class="col-sm-4" ><a href = "#"> <img src="IMG_2.jpg" style="width:40%; height:50"> </div>
-	<div class="col-sm-4" ><a href = "#"> <img src="IMG_3.jpg" style="width:40%; height:50"> </div>
+    <div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_1.jpg" style="width:40%; height:50"></a> </center> </div>
+	<div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_2.jpg" style="width:40%; height:50"></a> </center> </div>
+    <div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_3.jpg" style="width:40%; height:50"></a> </center> </div>
 	</div>
 	<br>
-	<div class="row">
-	 <div class="col-sm-4" ><a href = "#"> <img src="IMG_4.jpg" style="width:40%; height:50"> </div>
-    <div class="col-sm-4" ><a href = "#"> <img src="IMG_5.jpg" style="width:40%; height:50"> </div>
-	<div class="col-sm-4" ><a href = "#"> <img src="IMG_6.jpg" style="width:40%; height:50"> </div>
-	
+  <div class="row">
+    <div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_4.jpg" style="width:40%; height:50"></a> </center> </div>
+	<div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_5.jpg" style="width:40%; height:50"></a> </center> </div>
+    <div class="col-sm-4" ><center> <a href = "http://localhost/Admission.lk/authentication/fixedcat.php"><img src="IMG_6.jpg" style="width:40%; height:50"></a> </center> </div>
 	</div>
 </div>
 
+
+<!--Sticky Footer-->
+<div class="footer" style="height: 8%">
+<br>
+  <p> © 2019 | Admission.lk</p>
+</div>	
 </body>
 </html>
 

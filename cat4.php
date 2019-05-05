@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Admission.lk</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -22,40 +22,40 @@
     <div class="form-group">
   <h4> 9.0  Children of persons belonging to the staff in an institution directly involved in school education. </h4>
       <label for="usr">9.1  Post held as a permanent employee in the relevant  institutions</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="npost" id="npost">
     <br>
       <label>Period of service</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="pserv" id="pserv">
     <br>  
       <label>9.2 Distance from the place of residence to the place of work</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="dwork" id="dwork">
     <br>
       <label>9.3  If serving presently in a difficult school</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="dscl" id="dscl">
     <br>
       <label>Period of difficult school service</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="pdscl" id="pdscl">
     <br>
       <label>9.4  Name of the school if serving in a school</label>
-      <input type="text" class="form-control" id="usr">
+      <input type="text" class="form-control" name="nscl" id="nscl">
     <br>
       <label>Period of service</label>
-      <input type="text" class="form-control" id="usr">  
+      <input type="text" class="form-control" name="tserv" id="tserv">  
     <br>
       <label>9.5  Distance from permanent place of residence to the school applied</label>
-      <input type="text" class="form-control" id="usr">   
+      <input type="text" class="form-control" name="drscl" id="drscl">   
     <br>
     <br>  
     <div class="form-group" class="radio-inline">
        <label>9.6 Document relevant to the place of residence</label>
     <label>   
-      <input type="radio" name="optradio" >Yes
-      <input type="radio" name="optradio">No
+      <input type="radio" name="dres" id="dres" >Yes
+      <input type="radio" name="dres" id="dres" >No
     </label>
     </div> 
     <br>
      <label>9.7 Distance from permanent place of residence to the place of work </label>
-      <input type="text" class="form-control" id="usr">   
+      <input type="text" class="form-control" name="drwok" id="drwok">   
     <br>
 
     <label>Declaration</label>
