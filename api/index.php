@@ -9,27 +9,28 @@
 <h3>Demo Create and Consume Simple REST API in PHP</h3>   
 <form action="" method="POST">
 <label>Enter ID:</label><br />
-<input type="text" name="order_id" placeholder="Enter ID" required/>
+<input type="text" name="sid" placeholder="Enter SID" required/>
+<input type="text" name="shortname" id="shortname" placeholder="Enter Short Name" required/>
 <br /><br />
 <button type="submit" name="submit">Submit</button>
 </form>    
 
 <?php
-if (isset($_POST['order_id']) && $_POST['order_id']!="") {
-	$order_id = $_POST['order_id'];
-	$url = "http://localhost/admission/api/rest/api/".$order_id;
+if (isset($_POST['sid']) && $_POST['sid']!="") {
+	$sid = $_POST['sid'];
+	$shortName = $_POST['shortname'];
+	$url = "http://localhost/admission/Admission.lk/api/api.php?sid=".$sid."&update=true&shortname=".$shortName;
 	
 	$client = curl_init($url);
 	curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
 	$response = curl_exec($client);
-	
 	$result = json_decode($response);
 	
 	echo "<table>";
-	echo "<tr><td>Order ID:</td><td>$result->order_id</td></tr>";
-	echo "<tr><td>Amount:</td><td>$result->amount</td></tr>";
-	echo "<tr><td>Response Code:</td><td>$result->response_code</td></tr>";
-	echo "<tr><td>Response Desc:</td><td>$result->response_desc</td></tr>";
+	echo "<tr><td>SID : </td><td>$result->sid</td></tr>";
+	echo "<tr><td>Full Name : </td><td>$result->fullname</td></tr>";
+	echo "<tr><td>Short Name:</td><td>$result->shortname</td></tr>";
+	echo "<tr><td>DOB : </td><td>$result->dob</td></tr>";
 	echo "</table>";
 }
     ?>
