@@ -19,8 +19,10 @@ if (isset($_GET['order_id']) && $_GET['order_id'] != "") {
 		response(NULL, NULL, 200, "No Record Found");
 	}
 } else if (checkIsset('sid') && $_GET['update'] != 'true') {
+	
 	$sid = $_GET['sid'];
 	$result = mysqli_query($con, "SELECT * FROM `student` WHERE sid=$sid");
+	error_log('sid:'.$sid.'update:'.$_GET['update']);
 	if (mysqli_num_rows($result) > 0) {
 		$row = mysqli_fetch_array($result);
 		$sid = $row['sid'];

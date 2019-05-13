@@ -1,13 +1,26 @@
-<?php
-include('api/db.php');
-if (isset($_GET['order_id']) && $_GET['order_id'] != "") {
-  
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include('api/db.php');
+if (isset($_GET['sid']) && $_GET['sid'] != "") {
+  $sid = $_GET['sid'];
+  $jsonData = getData('http://localhost/Admission.lk/authentication/api/api.php?update=false&sid=' . $sid);
+}else{
+  $_GET['sid'] = 111;
+}
+
+
+function getData($url)
+{
+  $curlSession = curl_init();
+  curl_setopt($curlSession, CURLOPT_URL, $url);
+  curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+  curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+  $jsonData = json_decode(curl_exec($curlSession),true);
+  curl_close($curlSession);
+  return $jsonData;
+}
+?>
 
 <head>
   <title>Admission.lk</title>
@@ -23,15 +36,35 @@ if (isset($_GET['order_id']) && $_GET['order_id'] != "") {
   <div class="container">
     <h2>Admission Form</h2>
     <p>Dear Parent/Guardian,<br> Welcome to our School's Admission Center.Please use this form to apply for your child's Admission to your school.We need complete and accurate information about the student.So make sure you will fill out all fields. School Admission Forms are processed within 48 hours. You will receive an email confiramation when we process your application. </p>
-    <form>
+    <form method="get">
+    <?php
+    if(isset($_GET['save'])){
+        echo "Saved";
+         $nif= $_GET['nif'];
+
+         $shortname= $_GET['shortname'];
+          if ($_GET['male'] == "checked"){
+            $sex = "Male";
+          }
+
+          $dob = $_GET['dob']."-".$_GET['mob']."-".$_GET['yob'];
+          //echo $dob;
+
+          
+        getData('http://localhost/Admission.lk/authentication/api/api.php?update=true&sid='.$sid."&fullname=".$nif);
+        //header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php');
+    }
+
+    ?>
+      <input name="update" value="true" hidden><input name="sid" value="1" hidden>
       <div class="form-group">
         <h4> 01.Details of the child </h4>
         <label for="usr">1.1 Name in full</label>
-        <input type="text" name="nif" class="form-control" id="nif">
+        <input type="text" name="nif" value="<?php echo  $jsonData['fullname'];?>" class="form-control" id="nif">
       </div>
       <div class="form-group">
         <label>1.2 Name with initials</label>
-        <input type="text" name="nwi" class="form-control" id="nwi">
+        <input type="text" name="shortname" class="form-control" id="nwi">
       </div>
       <div class="form-group">
         <label>1.3 Religion</label>
@@ -47,8 +80,8 @@ if (isset($_GET['order_id']) && $_GET['order_id'] != "") {
       </div>
       <div class="form-group">
         <label>1.5 sex <br>
-          <input type="radio" name="sexradio" id="sexradio">Male <br>
-          <input type="radio" name="sexradio" id="sexradio">Female
+          <input type="radio" name="male" id="sexradio">Male <br>
+          <input type="radio" name="female" id="sexradio">Female
         </label>
       </div>
 
@@ -429,8 +462,7 @@ if (isset($_GET['order_id']) && $_GET['order_id'] != "") {
 
         <div class="form-group col-sm-11"></div>
         <div class="form-group col-sm-1">
-          <a href="http://localhost/Admission.lk/authentication/fixedcatpage2.php">
-            <button type="submit" form="nameform" value="Next" class="btn btn-success">Next</button> </a>
+          <button type="submit" value="save"  name="save" class="btn btn-success">Save</button> </a>
         </div>
       </div>
 
