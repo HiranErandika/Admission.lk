@@ -5,7 +5,7 @@ include('api/db.php');
 if (isset($_GET['sid']) && $_GET['sid'] != "") {
   $sid = $_GET['sid'];
   $jsonData = getData('http://localhost/Admission.lk/authentication/api/api.php?update=false&sid=' . $sid);
-}else{
+} else {
   $_GET['sid'] = 111;
 }
 
@@ -16,7 +16,7 @@ function getData($url)
   curl_setopt($curlSession, CURLOPT_URL, $url);
   curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
   curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
-  $jsonData = json_decode(curl_exec($curlSession),true);
+  $jsonData = json_decode(curl_exec($curlSession), true);
   curl_close($curlSession);
   return $jsonData;
 }
@@ -37,34 +37,93 @@ function getData($url)
     <h2>Admission Form</h2>
     <p>Dear Parent/Guardian,<br> Welcome to our School's Admission Center.Please use this form to apply for your child's Admission to your school.We need complete and accurate information about the student.So make sure you will fill out all fields. School Admission Forms are processed within 48 hours. You will receive an email confiramation when we process your application. </p>
     <form method="get">
-    <?php
-    if(isset($_GET['save'])){
+      <?php
+      if (isset($_GET['save'])) {
         echo "Saved";
-         $nif= $_GET['nif'];
+        $nif = "" . $_GET['nif'];
+        $nwi = "" . $_GET['nwi'];
+        $rel = "" . $_GET['rel'];
+        $dob = "" . $_GET['dob'] . "-" . $_GET['mob'] . "-" . $_GET['yob'];
+        //  $dob = "". $_GET['ysob']."-".$_GET['msob']."-".$_GET['dyob'];
 
-         $shortname= $_GET['shortname'];
+        $pnif = "" . $_GET['pnif'];
+        $pnwi = "" . $_GET['pnwi'];
+        $nic = "" . $_GET['nic'];
+        $prel = "" . $_GET['prel'];
+        $padd = "" . $_GET['padd'];
+        $tpnum = "" . $_GET['tpnum'];
+        $resd = "" . $_GET['resd'];
+        $resa = "" . $_GET['resa'];
+
+        $nos1 = "" . $_GET['nos1'];
+        $cos1 = "" . $_GET['cos1'];
+        $dts1 = "" . $_GET['dts1'];
+
+        $nos2 = "" . $_GET['nos2'];
+        $cos2 = "" . $_GET['cos2'];
+        $dts2 = "" . $_GET['dts2'];
+
+        $nos3 = "" . $_GET['nos3'];
+        $cos3 = "" . $_GET['cos3'];
+        $dts3 = "" . $_GET['dts3'];
+
+        $nos4 = "" . $_GET['nos4'];
+        $cos4 = "" . $_GET['cos4'];
+        $dts4 = "" . $_GET['dts4'];
+
+        $nos5 = "" . $_GET['nos5'];
+        $cos5 = "" . $_GET['cos5'];
+        $dts5 = "" . $_GET['dts5'];
+
+        $nos6 = "" . $_GET['nos6'];
+        $cos6 = "" . $_GET['cos6'];
+        $dts6 = "" . $_GET['dts6'];
+
+
+
+        //fixed cat page 2
+
+
+
+
+
+
+
+
+
+        http: //localhost/Admission.lk/authentication/fixedcat.php?update=true&sid=1&nif=Kadira+Vithanage+Hiran+Erandika+A&nwi=&rel=&dob=0&mob=0&yob=0&ysob=0&msob=0&dsob=0&pnif=&pnwi=&nic=&prel=&padd=&tpnum=&resd=&resa=&resg=&resgn=&nos1=&cos1=&dts1=&nos2=&cos2=&dts2=&nos3=&cos3=&dts3=&nos4=&cos4=&dts4=&nos5=&cos5=&dts5=&nos6=&cos6=&dts6=&save=save
+
+
+
+
+
+
+
+        /*$shortname= "". $_GET['shortname'];
           if ($_GET['male'] == "checked"){
             $sex = "Male";
-          }
+          }*/ $dob = "" . $_GET['dob'] . "-" . $_GET['mob'] . "-" . $_GET['yob'];
+        //echo $dob;
 
-          $dob = $_GET['dob']."-".$_GET['mob']."-".$_GET['yob'];
-          //echo $dob;
+        $url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=' . urlencode($sid) . "&fullname=" . urlencode($nif) . "&shortname=" . urlencode($nwi) . "&religion=" . urlencode($rel) . "&dob=" . urlencode($dob) . "&prox_gfullname=" . urlencode($pnif) . "&prox_gshortname=" . urlencode($pnwi) . "&prox_gnic=" . urlencode($nic) . "&prox_greligion=" . urlencode($prel) . "&prox_paddress=" . urlencode($padd) . "&prox_telephone=" . urlencode($tpnum) . "&prox_district=" . urlencode($resd) . "&prox_divsec=" . urlencode($resa) . "&prox_scl1Name=" . urlencode($nos1) . "&prox_scl1cat=" . urlencode($cos1) . "&prox_scl1dist=" . urlencode($dts1) . "&prox_scl2Name=" . urlencode($nos2) . "&prox_scl2cat=" . urlencode($cos2) . "&prox_scl2dist=" . urlencode($dts2) . "&prox_scl3Name=" . urlencode($nos3) . "&prox_scl3cat=" . urlencode($cos3) . "&prox_scl3dist=" . urlencode($dts3) . "&prox_scl4Name=" . urlencode($nos4) . "&prox_scl4cat=" . urlencode($cos4) . "&prox_scl4dist=" . urlencode($dts4) . "&prox_scl15Name=" . urlencode($nos5) . "&prox_scl5cat=" . urlencode($cos5) . "&prox_scl5dist=" . urlencode($dts5) . "&prox_scl6Name=" . urlencode($nos6) . "&prox_scl6cat=" . urlencode($cos6) . "&prox_scl6dist=" . urlencode($dts6);
+        //$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=1&update=true&shortname=KVHE&abc=&gfds=';
 
-          
-        getData('http://localhost/Admission.lk/authentication/api/api.php?update=true&sid='.$sid."&fullname=".$nif);
-        //header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php');
-    }
+        //echo "<br>" . $url . "<br>";
+        $resp = file_get_contents("$url");
 
-    ?>
-      <input name="update" value="true" hidden><input name="sid" value="1" hidden>
+        header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php?cat=' . $_GET['cat']);
+      }
+
+      ?>
+      <input name="update" value="true" hidden><input name="sid" value="1" hidden><input name="cat" value="<?php echo $_GET['cat']; ?>" hidden>
       <div class="form-group">
         <h4> 01.Details of the child </h4>
         <label for="usr">1.1 Name in full</label>
-        <input type="text" name="nif" value="<?php echo  $jsonData['fullname'];?>" class="form-control" id="nif">
+        <input type="text" name="nif" value="<?php echo  $jsonData['fullname']; ?>" class="form-control" id="nif">
       </div>
       <div class="form-group">
         <label>1.2 Name with initials</label>
-        <input type="text" name="shortname" class="form-control" id="nwi">
+        <input type="text" name="nwi" value="<?php echo  $jsonData['shortname']; ?>" class="form-control" id="nwi">
       </div>
       <div class="form-group">
         <label>1.3 Religion</label>
@@ -462,7 +521,7 @@ function getData($url)
 
         <div class="form-group col-sm-11"></div>
         <div class="form-group col-sm-1">
-          <button type="submit" value="save"  name="save" class="btn btn-success">Save</button> </a>
+          <button type="submit" value="save" name="save" class="btn btn-success">Save</button> </a>
         </div>
       </div>
 
