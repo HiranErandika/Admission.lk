@@ -23,14 +23,7 @@ function getData($url)
 }
 ?>
 
-<head>
-	<title>Admission.lk</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
+<?php include('header.php');?>
 
 <body>
 
@@ -40,49 +33,49 @@ function getData($url)
 		<form>
 			<?php
 			if (isset($_GET['save'])) {
-				echo "Saved";
-				$snam1 = $_GET['snam1'];
-				$snam2 = $_GET['snam2'];
-				$snam3 = $_GET['snam3'];
-				$snam4 = $_GET['snam4'];
-				$snam5 = $_GET['snam5'];
-				$snam6 = $_GET['snam6'];
-				$snam7 = $_GET['snam7'];
-				$snam8 = $_GET['snam8'];
-				$snam9 = $_GET['snam9'];
-				$snam10 = $_GET['snam10'];
+				// echo "Saved";
+				// $snam1 = $_GET['snam1'];
+				// $snam2 = $_GET['snam2'];
+				// $snam3 = $_GET['snam3'];
+				// $snam4 = $_GET['snam4'];
+				// $snam5 = $_GET['snam5'];
+				// $snam6 = $_GET['snam6'];
+				// $snam7 = $_GET['snam7'];
+				// $snam8 = $_GET['snam8'];
+				// $snam9 = $_GET['snam9'];
+				// $snam10 = $_GET['snam10'];
 
-				$y1 = $_GET['y1'];
-				$ed1 = $_GET['ed1'];
-				$gn1 = $_GET['gn1'];
-				$pd1 = $_GET['pd1'];
-				$hn1 = $_GET['hn1'];
-				$sn1 = $_GET['sn1'];
-				$ne1 = $_GET['ne1'];
+				// $y1 = $_GET['y1'];
+				// $ed1 = $_GET['ed1'];
+				// $gn1 = $_GET['gn1'];
+				// $pd1 = $_GET['pd1'];
+				// $hn1 = $_GET['hn1'];
+				// $sn1 = $_GET['sn1'];
+				// $ne1 = $_GET['ne1'];
 
-				$y2 = $_GET['y2'];
-				$ed2 = $_GET['ed2'];
-				$gn2 = $_GET['gn2'];
-				$pd2 = $_GET['pd2'];
-				$hn2 = $_GET['hn2'];
-				$sn2 = $_GET['sn2'];
-				$ne2 = $_GET['ne2'];
+				// $y2 = $_GET['y2'];
+				// $ed2 = $_GET['ed2'];
+				// $gn2 = $_GET['gn2'];
+				// $pd2 = $_GET['pd2'];
+				// $hn2 = $_GET['hn2'];
+				// $sn2 = $_GET['sn2'];
+				// $ne2 = $_GET['ne2'];
 
-				$y3 = $_GET['y3'];
-				$ed3 = $_GET['ed3'];
-				$gn3 = $_GET['gn3'];
-				$pd3 = $_GET['pd3'];
-				$hn3 = $_GET['hn3'];
-				$sn3 = $_GET['sn3'];
-				$ne3 = $_GET['ne3'];
+				// $y3 = $_GET['y3'];
+				// $ed3 = $_GET['ed3'];
+				// $gn3 = $_GET['gn3'];
+				// $pd3 = $_GET['pd3'];
+				// $hn3 = $_GET['hn3'];
+				// $sn3 = $_GET['sn3'];
+				// $ne3 = $_GET['ne3'];
 
-				$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=' . urlencode($sid) . "&fullname=" . urlencode($nif) . "&shortname=" . urlencode($nwi) . "&religion=" . urlencode($rel) . "&dob=" . urlencode($dob) . "&prox_gfullname=" . urlencode($pnif) . "&prox_gshortname=" . urlencode($pnwi) . "&prox_gnic=" . urlencode($nic) . "&prox_greligion=" . urlencode($prel) . "&prox_paddress=" . urlencode($padd) . "&prox_telephone=" . urlencode($tpnum) . "&prox_district=" . urlencode($resd) . "&prox_divsec=" . urlencode($resa) . "&prox_scl1Name=" . urlencode($nos1) . "&prox_scl1cat=" . urlencode($cos1) . "&prox_scl1dist=" . urlencode($dts1) . "&prox_scl2Name=" . urlencode($nos2) . "&prox_scl2cat=" . urlencode($cos2) . "&prox_scl2dist=" . urlencode($dts2) . "&prox_scl3Name=" . urlencode($nos3) . "&prox_scl3cat=" . urlencode($cos3) . "&prox_scl3dist=" . urlencode($dts3) . "&prox_scl4Name=" . urlencode($nos4) . "&prox_scl4cat=" . urlencode($cos4) . "&prox_scl4dist=" . urlencode($dts4) . "&prox_scl15Name=" . urlencode($nos5) . "&prox_scl5cat=" . urlencode($cos5) . "&prox_scl5dist=" . urlencode($dts5) . "&prox_scl6Name=" . urlencode($nos6) . "&prox_scl6cat=" . urlencode($cos6) . "&prox_scl6dist=" . urlencode($dts6);
+				//$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=' . urlencode($sid) . "&fullname=" . urlencode($nif) . "&shortname=" . urlencode($nwi) . "&religion=" . urlencode($rel) . "&dob=" . urlencode($dob) . "&prox_gfullname=" . urlencode($pnif) . "&prox_gshortname=" . urlencode($pnwi) . "&prox_gnic=" . urlencode($nic) . "&prox_greligion=" . urlencode($prel) . "&prox_paddress=" . urlencode($padd) . "&prox_telephone=" . urlencode($tpnum) . "&prox_district=" . urlencode($resd) . "&prox_divsec=" . urlencode($resa) . "&prox_scl1Name=" . urlencode($nos1) . "&prox_scl1cat=" . urlencode($cos1) . "&prox_scl1dist=" . urlencode($dts1) . "&prox_scl2Name=" . urlencode($nos2) . "&prox_scl2cat=" . urlencode($cos2) . "&prox_scl2dist=" . urlencode($dts2) . "&prox_scl3Name=" . urlencode($nos3) . "&prox_scl3cat=" . urlencode($cos3) . "&prox_scl3dist=" . urlencode($dts3) . "&prox_scl4Name=" . urlencode($nos4) . "&prox_scl4cat=" . urlencode($cos4) . "&prox_scl4dist=" . urlencode($dts4) . "&prox_scl15Name=" . urlencode($nos5) . "&prox_scl5cat=" . urlencode($cos5) . "&prox_scl5dist=" . urlencode($dts5) . "&prox_scl6Name=" . urlencode($nos6) . "&prox_scl6cat=" . urlencode($cos6) . "&prox_scl6dist=" . urlencode($dts6);
 				//$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=1&update=true&shortname=KVHE&abc=&gfds=';
 
 				//echo "<br>" . $url . "<br>";
-				$resp = file_get_contents("$url");
+				//$resp = file_get_contents("$url");
 
-				header('Location: http://localhost/Admission.lk/authentication/cat'.$_GET['cat'] . ".php");
+				header('Location: http://localhost/Admission.lk/authentication/cat' . $_GET['cat'] . ".php");
 			}
 
 			?>
@@ -417,7 +410,7 @@ function getData($url)
 
 				<div class="form-group col-sm-11"></div>
 				<div class="form-group col-sm-1">
-						<button type="submit" form="nameform" value="save" class="btn btn-success">Next</button> </a>
+					<button type="submit" value="save" name="save" class="btn btn-success">Save</button> </a>
 				</div>
 
 
