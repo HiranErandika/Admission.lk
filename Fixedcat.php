@@ -81,24 +81,6 @@ function getData($url)
 
 
 
-        //fixed cat page 2
-
-
-
-
-
-
-
-
-
-        http: //localhost/Admission.lk/authentication/fixedcat.php?update=true&sid=1&nif=Kadira+Vithanage+Hiran+Erandika+A&nwi=&rel=&dob=0&mob=0&yob=0&ysob=0&msob=0&dsob=0&pnif=&pnwi=&nic=&prel=&padd=&tpnum=&resd=&resa=&resg=&resgn=&nos1=&cos1=&dts1=&nos2=&cos2=&dts2=&nos3=&cos3=&dts3=&nos4=&cos4=&dts4=&nos5=&cos5=&dts5=&nos6=&cos6=&dts6=&save=save
-
-
-
-
-
-
-
         /*$shortname= "". $_GET['shortname'];
           if ($_GET['male'] == "checked"){
             $sex = "Male";

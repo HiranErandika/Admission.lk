@@ -82,7 +82,7 @@ function getData($url)
 				//echo "<br>" . $url . "<br>";
 				$resp = file_get_contents("$url");
 
-				header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php?cat=' . $_GET['cat']);
+				header('Location: http://localhost/Admission.lk/authentication/cat'.$_GET['cat'] . ".php");
 			}
 
 			?>
@@ -417,7 +417,8 @@ function getData($url)
 
 				<div class="form-group col-sm-11"></div>
 				<div class="form-group col-sm-1">
-					<button type="submit" value="save" name="save" class="btn btn-success">Save</button> </a>
+					<a href="http://localhost/Admission.lk/authentication/cat<?php echo ($_GET['cat'] . ".php"); ?>">
+						<button type="submit" form="nameform" value="save" class="btn btn-success">Next</button> </a>
 				</div>
 
 
