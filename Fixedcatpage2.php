@@ -1,8 +1,27 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
+
+<?php
+include('api/db.php');
+if (isset($_GET['sid']) && $_GET['sid'] != "") {
+	$sid = $_GET['sid'];
+	$jsonData = getData('http://localhost/Admission.lk/authentication/api/api.php?update=false&sid=' . $sid);
+} else {
+	$_GET['sid'] = 111;
+}
+
+
+function getData($url)
+{
+	$curlSession = curl_init();
+	curl_setopt($curlSession, CURLOPT_URL, $url);
+	curl_setopt($curlSession, CURLOPT_BINARYTRANSFER, true);
+	curl_setopt($curlSession, CURLOPT_RETURNTRANSFER, true);
+	$jsonData = json_decode(curl_exec($curlSession), true);
+	curl_close($curlSession);
+	return $jsonData;
+}
+?>
 
 <head>
 	<title>Admission.lk</title>
@@ -19,6 +38,55 @@
 		<h2>Admission Form</h2>
 		<p>Dear Parent/Guardian,<br> Welcome to our School's Admission Center.Please use this form to apply for your child's Admission to your school.We need complete and accurate information about the <br> student.So make sure you will fill out all fields. School Admission Forms are processed within 48 hours. You will receive an email confiramation when we process your <br> application. </p>
 		<form>
+			<?php
+			if (isset($_GET['save'])) {
+				echo "Saved";
+				$snam1 = $_GET['snam1'];
+				$snam2 = $_GET['snam2'];
+				$snam3 = $_GET['snam3'];
+				$snam4 = $_GET['snam4'];
+				$snam5 = $_GET['snam5'];
+				$snam6 = $_GET['snam6'];
+				$snam7 = $_GET['snam7'];
+				$snam8 = $_GET['snam8'];
+				$snam9 = $_GET['snam9'];
+				$snam10 = $_GET['snam10'];
+
+				$y1 = $_GET['y1'];
+				$ed1 = $_GET['ed1'];
+				$gn1 = $_GET['gn1'];
+				$pd1 = $_GET['pd1'];
+				$hn1 = $_GET['hn1'];
+				$sn1 = $_GET['sn1'];
+				$ne1 = $_GET['ne1'];
+
+				$y2 = $_GET['y2'];
+				$ed2 = $_GET['ed2'];
+				$gn2 = $_GET['gn2'];
+				$pd2 = $_GET['pd2'];
+				$hn2 = $_GET['hn2'];
+				$sn2 = $_GET['sn2'];
+				$ne2 = $_GET['ne2'];
+
+				$y3 = $_GET['y3'];
+				$ed3 = $_GET['ed3'];
+				$gn3 = $_GET['gn3'];
+				$pd3 = $_GET['pd3'];
+				$hn3 = $_GET['hn3'];
+				$sn3 = $_GET['sn3'];
+				$ne3 = $_GET['ne3'];
+
+				$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=' . urlencode($sid) . "&fullname=" . urlencode($nif) . "&shortname=" . urlencode($nwi) . "&religion=" . urlencode($rel) . "&dob=" . urlencode($dob) . "&prox_gfullname=" . urlencode($pnif) . "&prox_gshortname=" . urlencode($pnwi) . "&prox_gnic=" . urlencode($nic) . "&prox_greligion=" . urlencode($prel) . "&prox_paddress=" . urlencode($padd) . "&prox_telephone=" . urlencode($tpnum) . "&prox_district=" . urlencode($resd) . "&prox_divsec=" . urlencode($resa) . "&prox_scl1Name=" . urlencode($nos1) . "&prox_scl1cat=" . urlencode($cos1) . "&prox_scl1dist=" . urlencode($dts1) . "&prox_scl2Name=" . urlencode($nos2) . "&prox_scl2cat=" . urlencode($cos2) . "&prox_scl2dist=" . urlencode($dts2) . "&prox_scl3Name=" . urlencode($nos3) . "&prox_scl3cat=" . urlencode($cos3) . "&prox_scl3dist=" . urlencode($dts3) . "&prox_scl4Name=" . urlencode($nos4) . "&prox_scl4cat=" . urlencode($cos4) . "&prox_scl4dist=" . urlencode($dts4) . "&prox_scl15Name=" . urlencode($nos5) . "&prox_scl5cat=" . urlencode($cos5) . "&prox_scl5dist=" . urlencode($dts5) . "&prox_scl6Name=" . urlencode($nos6) . "&prox_scl6cat=" . urlencode($cos6) . "&prox_scl6dist=" . urlencode($dts6);
+				//$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=1&update=true&shortname=KVHE&abc=&gfds=';
+
+				//echo "<br>" . $url . "<br>";
+				$resp = file_get_contents("$url");
+
+				header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php?cat=' . $_GET['cat']);
+			}
+
+			?>
+			<input name="update" value="true" hidden><input name="sid" value="1" hidden><input name="cat" value="<?php echo $_GET['cat']; ?>" hidden>
 
 			<div class="form-group col-sm-12">
 				<h4>4.0 Other schools where the child could be admitted and located closer to your place of residence than the school applied by this application:</h4>
@@ -349,8 +417,7 @@
 
 				<div class="form-group col-sm-11"></div>
 				<div class="form-group col-sm-1">
-					<a href="http://localhost/Admission.lk/authentication/cat<?php echo ($_GET['cat'] . ".php"); ?>">
-						<button type="submit" form="nameform" value="Next" class="btn btn-success">Next</button> </a>
+					<button type="submit" value="save" name="save" class="btn btn-success">Save</button> </a>
 				</div>
 
 
