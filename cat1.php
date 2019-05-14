@@ -37,6 +37,45 @@ function getData($url)
     <h2>Admission Form</h2>
     <p>Dear Parent/Guardian,<br> Welcome to our School's Admission Center. <b>Please complete only the sections relevant to the category applied for in the following sections.</b></p> <br>
     <form>
+      <?php
+      if (isset($_GET['save'])) {
+        echo "Saved";
+
+        
+        $nyrsa= $_GET['nyrsa'];
+        $nyrss= $_GET['nyrss'];
+        $nyrsg= $_GET['nyrsg'];
+
+        $marks = max($nyrsa,$nyrss,$nyrsg)*20;
+        //radio ownership doc? 
+        $owradio= $_GET['owradio'];
+
+        //other additional doc?
+        $adradio= $_GET['adradio'];
+
+        $nsclc= $_GET['nsclc'];
+
+        $marks = $marks - ($nsclc*5);
+        if($owradio=="false" && $adradio=="false"){
+          echo "No MARKS";
+          $marks = 0;
+        }else{
+          echo "FULL MARKS";
+        }
+
+
+
+        $url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=' . urlencode($sid) . "&prox_mark=" . $marks;
+        //$url = 'http://localhost/Admission.lk/authentication/api/api.php?update=true&sid=1&update=true&shortname=KVHE&abc=&gfds=';
+        echo $url;
+        //echo "<br>" . $url . "<br>";
+        $resp = file_get_contents("$url");
+        //header('Location: http://localhost/Admission.lk/authentication/fixedcatpage2.php?cat=' . $_GET['cat']);
+      }
+
+      ?>
+      <input name="update" value="true" hidden><input name="sid" value="1" hidden><input name="cat" value="1" hidden>
+
       <div class="form-group">
         <h3> 6.0 Children of residents in close proximity to the school </h3> <br>
         <label for="usr">6.1 Number of years that the applicant was included in the electoral register</label>
@@ -51,16 +90,16 @@ function getData($url)
         <br>
         <div class="form-group" class="radio-inline">
           <label>6.4 Document in proof of the ownership <br>
-            <input type="radio" name="owradio" id="owradio">Done <br>
-            <input type="radio" name="owradio" id="owradio">Undone
+            <input type="radio" name="owradio" value="true" id="owradio">Done <br>
+            <input type="radio" name="owradio" value="false" id="owradio">Undone
           </label>
         </div>
 
         <br>
         <div class="form-group" class="radio-inline">
           <label>6.5 Additional documents that could be submitted in proof of the residence <br>
-            <input type="radio" name="adradio" id="adradio">Done <br>
-            <input type="radio" name="adradio" id="adradio">Undone
+            <input type="radio" name="adradio" value="true" id="adradio">Done <br>
+            <input type="radio" name="adradio" value="false" id="adradio">Undone
           </label>
         </div>
 
@@ -77,8 +116,8 @@ function getData($url)
 
         <div class="form-group col-sm-11"></div>
         <div class="form-group col-sm-1">
-          <button type="submit" form="nameform" value="Submit" class="btn btn-success">Submit</button>
-        </div>
+        <button type="submit" value="save" name="save" class="btn btn-success">Save</button> </a>
+       </div>
 
 
 

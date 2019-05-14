@@ -417,7 +417,6 @@ function getData($url)
 
 				<div class="form-group col-sm-11"></div>
 				<div class="form-group col-sm-1">
-					<a href="http://localhost/Admission.lk/authentication/cat<?php echo ($_GET['cat'] . ".php"); ?>">
 						<button type="submit" form="nameform" value="save" class="btn btn-success">Next</button> </a>
 				</div>
 
